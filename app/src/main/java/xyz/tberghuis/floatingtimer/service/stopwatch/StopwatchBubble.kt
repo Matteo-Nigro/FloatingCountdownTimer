@@ -6,11 +6,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import xyz.tberghuis.floatingtimer.data.SavedTimer
+import xyz.tberghuis.floatingtimer.logd
 import xyz.tberghuis.floatingtimer.service.Bubble
 import xyz.tberghuis.floatingtimer.service.FloatingService
 import java.util.Timer
 import java.util.TimerTask
 import kotlin.concurrent.timerTask
+import kotlin.math.roundToInt
+import kotlin.time.TimeSource
 
 class Stopwatch(
   service: FloatingService,
@@ -30,6 +33,9 @@ class Stopwatch(
   isBackgroundTransparent,
   savedTimer
 ) {
+  // this is written when timer started or resumed
+  var virtualStartTimestamp = -1L
+
   val timeElapsed = mutableIntStateOf(0)
   val isRunningStateFlow = MutableStateFlow(start)
   private var stopwatchIncrementTask: TimerTask? = null
@@ -40,8 +46,14 @@ class Stopwatch(
       isRunningStateFlow.collect { running ->
         when (running) {
           true -> {
+// stuff the new api for now
+//            val markNow = TimeSource.Monotonic.markNow()
+            virtualStartTimestamp = System.currentTimeMillis() - (timeElapsed.intValue * 1000)
+            logd("virtualStartTimestamp $virtualStartTimestamp")
             stopwatchIncrementTask = timerTask {
-              timeElapsed.intValue++
+//              timeElapsed.intValue++
+              val elapsedMillis = System.currentTimeMillis() - virtualStartTimestamp
+              timeElapsed.intValue = (elapsedMillis / 1000.0).roundToInt()
             }
             // ignore lint warning as I think would be more accurate than .schedule()
 //            Timer().scheduleAtFixedRate(stopwatchIncrementTask, 1000, 1000)
