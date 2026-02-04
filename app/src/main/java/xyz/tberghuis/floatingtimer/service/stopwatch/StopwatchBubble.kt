@@ -44,7 +44,8 @@ class Stopwatch(
               timeElapsed.intValue++
             }
             // ignore lint warning as I think would be more accurate than .schedule()
-            Timer().scheduleAtFixedRate(stopwatchIncrementTask, 1000, 1000)
+//            Timer().scheduleAtFixedRate(stopwatchIncrementTask, 1000, 1000)
+            Timer().schedule(stopwatchIncrementTask, 1000, 1000)
           }
 
           false -> {
