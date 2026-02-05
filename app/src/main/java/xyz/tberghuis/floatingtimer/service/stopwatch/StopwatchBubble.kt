@@ -13,7 +13,6 @@ import java.util.Timer
 import java.util.TimerTask
 import kotlin.concurrent.timerTask
 import kotlin.math.roundToInt
-import kotlin.time.TimeSource
 
 class Stopwatch(
   service: FloatingService,
@@ -33,7 +32,8 @@ class Stopwatch(
   isBackgroundTransparent,
   savedTimer
 ) {
-  // this is written when timer started or resumed
+  // this is written to when timer started or resumed
+  // no need to make thread safe
   var virtualStartTimestamp = -1L
 
   val timeElapsed = mutableIntStateOf(0)
@@ -55,7 +55,7 @@ class Stopwatch(
               val elapsedMillis = System.currentTimeMillis() - virtualStartTimestamp
               timeElapsed.intValue = (elapsedMillis / 1000.0).roundToInt()
             }
-            // ignore lint warning as I think would be more accurate than .schedule()
+            // lint warning
 //            Timer().scheduleAtFixedRate(stopwatchIncrementTask, 1000, 1000)
             Timer().schedule(stopwatchIncrementTask, 1000, 1000)
           }
