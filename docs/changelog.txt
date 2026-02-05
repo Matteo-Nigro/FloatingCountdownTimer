@@ -1,3 +1,6 @@
+v1.46.0    2026-02-05  002-stopped-timer-screen-off
+  fix bug stopwatch losing time when screen off
+
 v1.45.2    2025-05-23  dev-processname
   fix crash sdk 28
 
