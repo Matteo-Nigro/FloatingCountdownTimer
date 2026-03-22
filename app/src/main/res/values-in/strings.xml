@@ -71,6 +71,7 @@
     <string name="hours">jam</string>
     <string name="timer_link">Tautan Pengatur Waktu</string>
     <string name="auto_start">mulai otomatis</string>
+    <string name="saved_timer_options">Saved Timer Options</string>
     <string name="clipboard">Papan Klip</string>
     <string name="link">tautan</string>
     <string name="open_app">Buka Aplikasi</string>
