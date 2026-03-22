@@ -71,6 +71,7 @@
     <string name="hours">giờ</string>
     <string name="timer_link">Liên kết đồng hồ hẹn giờ</string>
     <string name="auto_start">tự động bắt đầu</string>
+    <string name="saved_timer_options">Saved Timer Options</string>
     <string name="clipboard">Bảng tạm</string>
     <string name="link">liên kết</string>
     <string name="open_app">Mở ứng dụng</string>
