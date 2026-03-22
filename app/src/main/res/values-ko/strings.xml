@@ -71,6 +71,7 @@
     <string name="hours">시간</string>
     <string name="timer_link">타이머 링크</string>
     <string name="auto_start">자동 시작</string>
+    <string name="saved_timer_options">Saved Timer Options</string>
     <string name="clipboard">클립보드</string>
     <string name="link">링크</string>
     <string name="open_app">앱 열기</string>
