@@ -71,6 +71,7 @@
     <string name="hours">horas</string>
     <string name="timer_link">Link do Temporizador</string>
     <string name="auto_start">iniciar automaticamente</string>
+    <string name="saved_timer_options">Saved Timer Options</string>
     <string name="clipboard">Área de Transferência</string>
     <string name="link">link</string>
     <string name="open_app">Abrir Aplicativo</string>
