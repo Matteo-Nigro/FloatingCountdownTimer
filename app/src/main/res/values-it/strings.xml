@@ -71,7 +71,8 @@
     <string name="hours">ore</string>
     <string name="timer_link">Link Timer</string>
     <string name="auto_start">avvio automatico</string>
-    <string name="clipboard">Appunti</string>
+    <string name="saved_timer_options">Opzioni Timer Salvato</string>
+    <string name="clipboard">Copia link</string>
     <string name="link">link</string>
     <string name="open_app">Apri App</string>
     <string name="close">Chiudi</string>
