@@ -52,7 +52,7 @@ fun SavedTimerOptionsDialog(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
-        Text("Saved Timer Options")
+        Text(stringResource(R.string.saved_timer_options))
         Row(
           modifier = Modifier,
           horizontalArrangement = Arrangement.spacedBy(16.dp),
